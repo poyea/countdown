@@ -6,7 +6,9 @@
     <br />
     Try:
     <br />
-    <span class="trial">{{ trial }}</span>
+    <span class="trial">
+      <a v-bind:href="'.' + trial">{{ trial }}</a>
+    </span>
   </div>
 </template>
 
@@ -64,5 +66,12 @@ h3 {
   color: azure;
   border-radius: 5px;
   padding: 3px 5px 3px 5px;
+}
+
+a:link,
+a:hover,
+a:active,
+a:visited {
+  color: white;
 }
 </style>
