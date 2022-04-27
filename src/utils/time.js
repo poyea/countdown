@@ -13,4 +13,5 @@ const msToFull = (ms) => {
     seconds > 1 ? "s" : ""
   }`;
 };
+
 export default msToFull;

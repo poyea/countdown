@@ -4,11 +4,13 @@
     <br />
     <br />
     <br />
-    Try:
-    <br />
-    <span class="trial">
-      <a v-bind:href="'.' + trial">{{ trial }}</a>
-    </span>
+    <div v-if="!time_set">
+      Try:
+      <br />
+      <span class="trial">
+        <a v-bind:href="'.' + trial">{{ trial }}</a>
+      </span>
+    </div>
   </div>
 </template>
 
@@ -38,14 +40,19 @@ export default {
       const diff = point - Date.now();
       if (isNaN(diff)) {
         this.setTest("Failed. Please retry.");
+        this.time_set = false;
       }
       if (diff < 0) {
         this.setTest("Please give the correct date & time.");
+        this.time_set = false;
       } else {
         const out = msToFull(diff);
         this.setTest(out);
       }
     }, 1000);
+  },
+  beforeCreate() {
+    this.time_set = true;
   },
   methods: {
     setTest(t) {
