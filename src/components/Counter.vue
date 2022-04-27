@@ -4,7 +4,7 @@
     <br />
     <br />
     <br />
-    <div v-if="!time_set">
+    <div v-if="!timeSet">
       Try:
       <br />
       <span class="trial">
@@ -40,11 +40,11 @@ export default {
       const diff = point - Date.now();
       if (isNaN(diff)) {
         this.setTest("Failed. Please retry.");
-        this.time_set = false;
+        this.timeSet = false;
       }
       if (diff < 0) {
         this.setTest("Please give the correct date & time.");
-        this.time_set = false;
+        this.timeSet = false;
       } else {
         const out = msToFull(diff);
         this.setTest(out);
@@ -52,11 +52,24 @@ export default {
     }, 1000);
   },
   beforeCreate() {
-    this.time_set = true;
+    this.timeSet = true;
   },
   methods: {
     setTest(t) {
       this.text = t;
+    },
+    setTheme(theme) {
+      localStorage.setItem("user-theme", theme);
+      this.userTheme = theme;
+      document.documentElement.className = theme;
+    },
+    toggleTheme() {
+      const activeTheme = localStorage.getItem("user-theme");
+      if (activeTheme === "light-theme") {
+        this.setTheme("dark-theme");
+      } else {
+        this.setTheme("light-theme");
+      }
     },
   },
 };
