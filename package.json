@@ -1,6 +1,7 @@
 {
   "name": "countdown",
   "version": "0.1.0",
+  "description": "The Countdown",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -12,6 +13,17 @@
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poyea/countdown.git"
+  },
+  "keywords": ["countdown", "timer"],
+  "author": "John Law",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poyea/countdown/issues"
+  },
+  "homepage": "https://github.com/poyea/countdown#readme",
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
