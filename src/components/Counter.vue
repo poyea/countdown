@@ -6,9 +6,10 @@
     <br />
     <div v-if="!timeSet">
       Try:
-      <br />
       <span class="trial">
-        <a v-bind:href="'.' + trial">{{ trial }}</a>
+        <a v-bind:href="'.' + trial">
+          {{ trial.substring(4).split("T").join(" ") }}</a
+        >
       </span>
     </div>
   </div>
