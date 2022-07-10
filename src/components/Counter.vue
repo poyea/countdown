@@ -1,6 +1,6 @@
 <template>
   <div class="words">
-    <h1>{{ text }}</h1>
+    <h1 class="time">{{ text }}</h1>
     <br />
     <br />
     <br />
@@ -80,12 +80,16 @@ export default {
 h3 {
   margin: 40px 0 0;
 }
+
 .trial {
-  font-family: "Lucida Console", "Courier New", monospace;
   background-color: grey;
   color: azure;
   border-radius: 5px;
   padding: 3px 5px 3px 5px;
+}
+
+.time {
+  font-size: 1.5rem;
 }
 
 a:link,

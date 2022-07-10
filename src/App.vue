@@ -1,5 +1,5 @@
 <template>
-  <img alt="logo" src="./assets/logo.png" />
+  <span class="banner">Countdown</span>
   <Counter />
 </template>
 
@@ -21,6 +21,12 @@ export default {
 html,
 body {
   height: 100%;
+  background-color: #262626;
+}
+
+* {
+  color: #f2f2f2;
+  font-family: "OCR A Std", monospace;
 }
 
 html {
@@ -44,5 +50,9 @@ body {
 
 img {
   max-width: 100%;
+}
+
+.banner {
+  font-size: 3rem;
 }
 </style>
